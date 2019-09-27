@@ -1,0 +1,16 @@
+<body>
+
+  <%=render partial: "header"%>
+
+<div calss = "main-box">
+  <%@writes.each do |write| %>
+  <div class = "contents">
+    <div class ="text">
+   <%= simple_format(write.text) %>
+    </div>
+     <%= link_to 'EDIT',"/writes/#{write.id}/edit",class:"post",method: :get %>  
+    <%= link_to 'DELETE',"/writes/#{write.id}",class:"post",method: :delete %>
+  </div>
+  <% end %>
+  <%= paginate @writes%>
+</div>

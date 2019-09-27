@@ -1,0 +1,16 @@
+<body>
+
+  <%=render partial: "header"%>
+
+<div calss = "main-box">
+  <div class = "contents">
+      <p>本文</p>
+    <div class ="text_new">
+    <%= form_tag("/writes/#{@write.id}", method: :patch) do %>
+    <textarea cols="8" name="text" rows="100"><%= @write.text %></textarea>
+    <input type="submit" value="SEND">
+    <%end%>
+    </div>
+
+  </div>
+</body>

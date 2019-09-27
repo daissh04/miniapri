@@ -1,0 +1,16 @@
+<body>
+
+  <%=render partial: "header"%>
+
+<div calss = "main-box">
+  <div class = "contents">
+      <p>本文</p>
+    <div class ="text_new">
+    <%= form_tag('/writes/new', method: :post) do %>
+    <textarea cols="8" name="text" placeholder="文字を入力して下さい" rows="100"></textarea>
+    <input type="submit" value="SEND">
+    <%end%>
+    </div>
+
+  </div>
+</body>
