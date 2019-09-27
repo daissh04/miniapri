@@ -8,7 +8,7 @@ class WritesController < ApplicationController
   end
 
   def create
-    Write.create(text:params[:text],user_id:1)
+    Write.create(text: write_params[:text], user_id: current_user.id)
   end
 
   def destroy
@@ -22,10 +22,10 @@ class WritesController < ApplicationController
 
   def update
     write = Write.find(params[:id])
-    Write.update(write_params)
+    write.update(write_params)
   end
 
   def write_params
-  params.permit(:text).merge(user_id:1)
+  params.permit(:text)
   end
 end

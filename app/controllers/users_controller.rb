@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @writes = User.where(user_id:current.user_id)
+    @writes = Write.where(user_id: current_user.id).order("created_at DESC").page(params[:page]).per(2)
   end
 end

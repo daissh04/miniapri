@@ -5,7 +5,6 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="/writes/new">NEW</a></li>
         <%= link_to "sign out", destroy_user_session_path, method: :delete %>
-        <a href="/users/<%= current_user.id %>">my page</a>
       </ul>
       <%else%>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
