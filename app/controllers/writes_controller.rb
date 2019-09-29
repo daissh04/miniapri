@@ -12,8 +12,8 @@ class WritesController < ApplicationController
   end
 
   def destroy
-   write = Write.find(params[:id])
-   write.destroy
+    write = Write.find(params[:id])
+    write.destroy
   end
 
   def edit
